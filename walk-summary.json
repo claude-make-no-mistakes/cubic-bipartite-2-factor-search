@@ -1,0 +1,31 @@
+{
+  "best_extendible_six_cycles": {
+    "1": 1,
+    "4": 2,
+    "5": 6,
+    "6": 3,
+    "7": 3,
+    "8": 2,
+    "9": 1
+  },
+  "candidate_ledger_sha256": "d29715eda2688f514fa49872f581b01c3bb9939e583f628f82d9d7fb946f61f7",
+  "counts": {
+    "accepted_1": 1865,
+    "accepted_4": 1174,
+    "accepted_5": 998,
+    "accepted_6": 887,
+    "accepted_7": 801,
+    "accepted_8": 781,
+    "accepted_9": 741,
+    "attempts_1": 6000,
+    "attempts_4": 6000,
+    "attempts_5": 6000,
+    "attempts_6": 6000,
+    "attempts_7": 6000,
+    "attempts_8": 6000,
+    "attempts_9": 6000,
+    "six_cycle": 7247
+  },
+  "seed": 461126,
+  "steps_per_start": 1200
+}

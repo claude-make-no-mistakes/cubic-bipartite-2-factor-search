@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\title{A six-cycle obstruction for 2-factor Hamiltonicity in cubic bipartite braces}
+\author{Claude Make No Mistakes}
+\date{25 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We characterize when a six-cycle in a cubic bipartite brace of girth
+at least six cannot be a component of a 2-factor. Its exterior must
+split into two connected shores with prescribed six-edge cuts.
+We use this decomposition to search at order 46 and certify a
+disconnected 2-factor for each of 26,010 sampled labeled graphs.
+Among these graphs are 249 certified braces with no six-cycle in
+any 2-factor.
+\end{abstract}
+
+\section{Setting}
+A brace here is a connected bipartite graph in which every matching
+of at most two edges extends to a perfect matching. The
+Funk--Jackson--Labbate--Sheehan conjecture \cite{fjls} is equivalent to
+asserting that \(K_{3,3}\) and the Heawood graph are the only cubic
+bipartite braces in which all 2-factors are Hamiltonian \cite{gjw}.
+Abreu et al.\ verified the conjecture through order 42, and through
+order 52 for girth at least eight \cite{abreu}.
+The order restriction \(2\bmod 4\) for a 2-factor Hamiltonian cubic
+bipartite graph \cite{fjls,gjw} singles out order 46 at girth six as
+the first case outside those ranges.
+
+\begin{proposition}
+Let \(G\) be a simple cubic bipartite brace of girth at least six, and
+let \(C\) be a six-cycle. The cycle \(C\) fails to occur as a component
+of a 2-factor if and only if \(V(G)\setminus V(C)\) can be partitioned
+into nonempty connected shores \(X,Y\) with the following properties:
+\begin{enumerate}
+\item Each shore has three edges to \(C\) and three to the other shore.
+\item All boundary endpoints within \(X\) have one bipartition color,
+and all boundary endpoints within \(Y\) have the opposite color.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Write \(A,B\) for the bipartition, with \(\lvert A\rvert=\lvert B\rvert=m\).
+We first recall the brace expansion
+\(\lvert N(Q)\rvert\geq \lvert Q\rvert+2\) for any nonempty set \(Q\)
+in one color class with \(\lvert Q\rvert\leq m-2\).
+Cubic degree counting gives \(\lvert N(Q)\rvert\geq\lvert Q\rvert\).
+Equality would disconnect \(G\). If \(\lvert N(Q)\rvert=\lvert Q\rvert+1\),
+there are three edges from \(N(Q)\) to the exterior of \(Q\).
+They include two disjoint edges. Otherwise the three share an
+endpoint. A common endpoint in \(N(Q)\) would have no neighbor in \(Q\).
+A common endpoint outside \(Q\) would make \(Q\cup N(Q)\) together with
+that endpoint a proper component. Extending two disjoint crossing edges
+to a perfect matching leaves too few neighbors to cover \(Q\).
+
+By girth, \(C\) is chordless and its six external neighbors are
+distinct. Write \(D_A,D_B\) for the external neighbors by color.
+A perfect matching complementary to a 2-factor containing \(C\)
+must contain the six edges leaving \(C\). These edges extend
+if and only if \(H=G-(V(C)\cup D_A\cup D_B)\) has a perfect matching.
+The remaining color classes \(A_H,B_H\) have size \(m-6\).
+
+\newpage
+If the matching fails, Hall's theorem gives a nonempty
+\(S\subseteq A_H\) with \(\lvert N_H(S)\rvert<\lvert S\rvert\).
+The only neighbors \(S\) can lose are the three in \(D_B\).
+Brace expansion forces \(\lvert N_H(S)\rvert=\lvert S\rvert-1\)
+and \(D_B\subseteq N_G(S)\).
+Put \(T=B_H\setminus N_H(S)\). Then
+\(\lvert T\rvert=m-6-\lvert S\rvert+1\) and
+\(N_H(T)\subseteq A_H\setminus S\). Applying the same argument
+to \(T\) gives \(N_H(T)=A_H\setminus S\) and \(D_A\subseteq N_G(T)\).
+Thus \(X=S\cup N_G(S)\) and \(Y=T\cup N_G(T)\) partition the exterior.
+Only vertices of \(N_G(S)\) can meet the cut of \(X\).
+The color imbalance \(\lvert N_G(S)\rvert-\lvert S\rvert=2\)
+and cubic degrees give exactly six cut edges. Three go to \(C\)
+through \(D_B\). Symmetrically \(Y\) has six cut edges, three
+through \(D_A\).
+
+Every component of either shore has a positive cut size divisible
+by three, by the same color and degree count. If a shore is
+disconnected it has two components, each with three cut edges.
+A nonsingleton component would have color imbalance one
+and would contradict brace expansion on its smaller color class.
+Two singleton components are impossible since each shore
+has at least four vertices.
+
+Conversely, the given boundary conditions imply color imbalance two
+on each shore. A perfect matching has to use exactly two edges of
+each of these cuts. The three edges from \(C\) entering either shore
+already exceed that number. Therefore the six edges leaving \(C\)
+cannot extend.
+\end{proof}
+
+One can test \(C\) using either alternating triple of its six
+external edges. If a perfect matching contains the triple at the
+three cycle vertices of one color, its complement contains both
+cycle edges at each of those vertices and hence all of \(C\).
+
+\begin{corollary}
+For a blocked six-cycle, let the shore orders be \(2s+2,2t+2\) with
+\(s,t\) the smaller color-class sizes. Each of \(s,t\) is either
+1 or at least 4. A shore with \(s=1\) is a claw. A shore with
+\(s=4\) is the graph obtained by subdividing every edge of \(K_4\) once.
+If \(\lvert V(G)\rvert>14\), there is a cyclic six-edge cut with
+both sides of order at least 10.
+\end{corollary}
+
+\begin{proof}
+The smaller class in a shore has every neighbor inside that shore.
+Its vertices have neighborhoods of size three, with pairwise
+intersections at most one since \(G\) has girth at least six.
+Thus \(s+2\geq 3s-\binom{s}{2}\), which excludes \(s=2,3\).
+For \(s=4\), equality forces each of the six pairs to share
+a neighbor and every such neighbor to belong to exactly two of
+the neighborhoods. This gives the subdivision claim. If the
+order is greater than 14, some shore has at least ten vertices.
+Its six-edge cut leaves at least ten vertices on the other side,
+which contains \(C\). A shore of \(k\geq10\) vertices in a cubic
+graph with six cut edges has \((3k-6)/2\) internal edges and
+contains a cycle.
+\end{proof}
+
+At order 46, \(s+t=18\). Up to interchanging the shores, the smaller
+parameter belongs to \(\{1,4,5,6,7,8,9\}\). The larger shore has at
+least 20 vertices.
+
+\newpage
+\section{Search and exact checks}
+We sample bipartite adjacency lists for the two shores and join them
+using the six-cycle and the prescribed edges. We discard invalid,
+disconnected, or girth-four graphs. From low-score examples we
+apply bipartition-preserving two-edge switches that keep the
+defining six-cycle and its shore decomposition. The score counts
+six-cycles that occur as a component of a 2-factor. In the final
+run we visit switch neighborhoods of graphs with score at most one,
+subject to a cap on the number of new graphs.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Stage & Graphs & Six-cycle witness & Longer-cycle witness \\
+\midrule
+Direct sampling & 763 & 763 & 0 \\
+Switch walks & 7,247 & 7,247 & 0 \\
+Switch neighborhoods & 18,000 & 17,751 & 249 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each rejection includes a perfect matching whose complement is
+disconnected. A separate verifier checks every witness. For
+the 249 zero-score graphs, it independently enumerates
+six-cycles and tests the matching extension of an alternating
+triple by breadth-first augmentation. It tests 2,208 disjoint edge
+pairs in each zero-score graph to verify brace status. Each of
+these graphs has 12 six-cycles. The separately archived example
+has a 2-factor with cycle orders 22 and 24. The sampled graphs are
+distinguished by their labeled adjacency lists. The search does
+not exhaust order 46.
+
+The proof uses the complementary Hall-set and degree-count
+mechanism also seen in generalized matching-extension results
+\cite{fks}. The criterion here describes the exact obstruction
+for a fixed six-cycle in a cubic bipartite brace.
+
+\begin{thebibliography}{9}
+\bibitem{fjls} M. Funk, B. Jackson, D. Labbate, and J. Sheehan.
+2-factor Hamiltonian graphs. \emph{J. Combin. Theory Ser. B}
+87 (2003), 138--144.
+\href{https://doi.org/10.1016/S0095-8956(02)00031-X}{DOI link}.
+\bibitem{gjw} M. Gorsky, T. Johanni, and S. Wiederrecht.
+A note on the 2-factor Hamiltonicity Conjecture.
+\emph{Discrete Math.} 348 (2025), 114442.
+\href{https://arxiv.org/html/2408.08128v2}{Preprint}.
+\bibitem{abreu} M. Abreu, J. Goedgebeur, J. Jooken, F. Romaniello,
+and T. Van den Eede. The Gray graph is pseudo 2-factor isomorphic.
+\href{https://arxiv.org/html/2504.12095v2}{arXiv:2504.12095v2}, 2026.
+\bibitem{fks} J. Fujisawa, S. Koizumi, and Y. Suzuki.
+Generalized matching extension problem in regular bipartite graphs.
+\emph{Discrete Math.} 349 (2026), 115182.
+\href{https://doi.org/10.1016/j.disc.2026.115182}{DOI link}.
+\end{thebibliography}
+\end{document}

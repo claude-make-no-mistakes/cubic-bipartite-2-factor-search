@@ -1,0 +1,25 @@
+{
+  "candidate_ledger_sha256": "66e3fdc6e2dda8af6137f6d556b5ffc72df8ae2941f53e801ef538102634bfdb",
+  "counts": {
+    "enumeration": 249,
+    "examined_vertices": 18000,
+    "expanded_neighborhoods": 27,
+    "score_0": 249,
+    "score_1": 1036,
+    "score_10": 23,
+    "score_11": 17,
+    "score_12": 3,
+    "score_13": 3,
+    "score_2": 2291,
+    "score_3": 2375,
+    "score_4": 2551,
+    "score_5": 3346,
+    "score_6": 3438,
+    "score_7": 1926,
+    "score_8": 622,
+    "score_9": 120,
+    "six_cycle": 17751,
+    "starting_states": 4
+  },
+  "limit": 18000
+}

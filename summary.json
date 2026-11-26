@@ -1,0 +1,22 @@
+{
+  "attempts_requested": 35000,
+  "candidate_ledger_sha256": "5638783e1444e6a0b1c2a28648c21d8164680bde260050a64a3ec77cca3152c7",
+  "counts": {
+    "accepted_1": 369,
+    "accepted_4": 99,
+    "accepted_5": 46,
+    "accepted_6": 55,
+    "accepted_7": 59,
+    "accepted_8": 68,
+    "accepted_9": 67,
+    "attempts_1": 5000,
+    "attempts_4": 5000,
+    "attempts_5": 5000,
+    "attempts_6": 5000,
+    "attempts_7": 5000,
+    "attempts_8": 5000,
+    "attempts_9": 5000,
+    "six_cycle": 763
+  },
+  "seed": 461125
+}
